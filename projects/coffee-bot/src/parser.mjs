@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+const MENU_FILE = process.env.COFFEE_MENU_FILE || 'blank_street_menu.merged.poc.json';
 const MENU = JSON.parse(
-  fs.readFileSync(path.resolve(process.cwd(), 'projects', 'coffee-bot', 'data', 'blank_street_menu.json'), 'utf8')
+  fs.readFileSync(path.resolve(process.cwd(), 'projects', 'coffee-bot', 'data', MENU_FILE), 'utf8')
 );
 
 const AUTO_ACCEPT_THRESHOLD = MENU.fuzzyThresholds?.autoAccept ?? 0.82;

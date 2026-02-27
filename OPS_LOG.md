@@ -36,3 +36,6 @@ Live execution log
 2026-02-27 14:29:45 +00:00 | save_user_pref | proactive_completion_pings | success
 2026-02-27 14:48:56 +00:00 | add_gateway_start_script | start-rebecca-gateway.bat | success
 2026-02-27 14:48:56 +00:00 | add_gateway_start_script | start-rebecca-gateway.ps1 | success
+2026-02-27 15:00:59 +00:00 | upgrade_menu_v1_5 | projects/coffee-bot/data/blank_street_menu.json | success
+2026-02-27 15:00:59 +00:00 | add_threshold_logic | projects/coffee-bot/src/parser.mjs | success
+2026-02-27 15:00:59 +00:00 | add_checkout_assist | projects/coffee-bot/app/index.html | success

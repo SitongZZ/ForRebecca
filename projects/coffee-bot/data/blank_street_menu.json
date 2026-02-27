@@ -1,51 +1,51 @@
 {
   "chain": "Blank Street",
+  "version": "v1.5",
   "defaults": {
     "size": "Large",
     "milk": "Whole Milk"
   },
+  "fuzzyThresholds": {
+    "autoAccept": 0.82,
+    "needsConfirm": 0.68
+  },
   "items": [
-    {
-      "canonical": "Pistachio Latte",
-      "aliases": ["pistachio latte", "pastichio latte", "pestichio latte", "pistachio late", "pastichio late", "pestichio late", "pistachio", "pista latte"],
-      "category": "drink"
-    },
-    {
-      "canonical": "Latte",
-      "aliases": ["latte", "caffe latte"],
-      "category": "drink"
-    },
-    {
-      "canonical": "Flat White",
-      "aliases": ["flat white"],
-      "category": "drink"
-    },
-    {
-      "canonical": "Americano",
-      "aliases": ["americano"],
-      "category": "drink"
-    },
-    {
-      "canonical": "Cappuccino",
-      "aliases": ["cappuccino", "cap"],
-      "category": "drink"
-    },
-    {
-      "canonical": "Matcha Latte",
-      "aliases": ["matcha", "matcha latte"],
-      "category": "drink"
-    },
-    {
-      "canonical": "Mocha",
-      "aliases": ["mocha"],
-      "category": "drink"
-    },
-    {
-      "canonical": "Espresso",
-      "aliases": ["espresso"],
-      "category": "drink"
-    }
+    { "canonical": "Pistachio Latte", "aliases": ["pistachio latte", "pastichio latte", "pestichio latte", "pistachio late", "pastichio late", "pestichio late", "pistachio", "pista latte"] },
+    { "canonical": "Latte", "aliases": ["latte", "caffe latte"] },
+    { "canonical": "Flat White", "aliases": ["flat white"] },
+    { "canonical": "Americano", "aliases": ["americano", "long black"] },
+    { "canonical": "Cappuccino", "aliases": ["cappuccino", "cap"] },
+    { "canonical": "Matcha Latte", "aliases": ["matcha", "matcha latte"] },
+    { "canonical": "Mocha", "aliases": ["mocha"] },
+    { "canonical": "Espresso", "aliases": ["espresso", "single espresso"] },
+    { "canonical": "Double Espresso", "aliases": ["double espresso", "doppio"] },
+    { "canonical": "Cortado", "aliases": ["cortado"] },
+    { "canonical": "Macchiato", "aliases": ["macchiato", "espresso macchiato"] },
+    { "canonical": "Iced Latte", "aliases": ["iced latte", "ice latte"] },
+    { "canonical": "Iced Americano", "aliases": ["iced americano", "ice americano"] },
+    { "canonical": "Iced Matcha Latte", "aliases": ["iced matcha", "iced matcha latte", "ice matcha"] },
+    { "canonical": "Cold Brew", "aliases": ["cold brew"] },
+    { "canonical": "Vanilla Latte", "aliases": ["vanilla latte"] },
+    { "canonical": "Caramel Latte", "aliases": ["caramel latte"] },
+    { "canonical": "Hazelnut Latte", "aliases": ["hazelnut latte"] },
+    { "canonical": "Chai Latte", "aliases": ["chai latte", "chai"] },
+    { "canonical": "Hot Chocolate", "aliases": ["hot chocolate", "hot choc"] },
+    { "canonical": "English Breakfast Tea", "aliases": ["english breakfast", "english breakfast tea"] },
+    { "canonical": "Earl Grey Tea", "aliases": ["earl grey", "earl grey tea"] },
+    { "canonical": "Green Tea", "aliases": ["green tea"] },
+    { "canonical": "Peppermint Tea", "aliases": ["peppermint tea", "mint tea"] },
+    { "canonical": "Chamomile Tea", "aliases": ["chamomile tea", "camomile tea"] },
+    { "canonical": "Iced Tea", "aliases": ["iced tea", "ice tea"] },
+    { "canonical": "Orange Juice", "aliases": ["orange juice", "oj"] },
+    { "canonical": "Lemonade", "aliases": ["lemonade"] },
+    { "canonical": "Still Water", "aliases": ["still water", "water"] },
+    { "canonical": "Sparkling Water", "aliases": ["sparkling water"] }
   ],
-  "milks": ["Whole Milk", "Oat Milk", "Almond Milk", "Soy Milk", "Skimmed Milk", "Semi-Skimmed Milk"],
-  "sizes": ["Small", "Medium", "Large"]
+  "milks": ["Whole Milk", "Oat Milk", "Almond Milk", "Soy Milk", "Skimmed Milk", "Semi-Skimmed Milk", "Coconut Milk"],
+  "sizes": ["Small", "Medium", "Large"],
+  "modifiers": {
+    "temperature": ["Hot", "Iced"],
+    "extraShot": ["No", "Yes"],
+    "sweetness": ["No Sugar", "Less Sugar", "Regular Sugar"]
+  }
 }

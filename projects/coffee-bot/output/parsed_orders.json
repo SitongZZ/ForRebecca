@@ -1,0 +1,85 @@
+{
+  "summary": {
+    "total_orders": 5,
+    "clarification_count": 1,
+    "auto_default_size_count": 5,
+    "auto_default_milk_count": 4
+  },
+  "orders": [
+    {
+      "name": "Alex",
+      "raw_order_text": "Iced latte oat",
+      "quantity": 1,
+      "drink": "Latte",
+      "size": "Large",
+      "milk": "Oat Milk",
+      "defaults_applied": {
+        "size": true,
+        "milk": false
+      },
+      "confidence": 0.92,
+      "clarification_needed": false,
+      "clarification_reason": ""
+    },
+    {
+      "name": "Mia",
+      "raw_order_text": "flat white",
+      "quantity": 1,
+      "drink": "Flat White",
+      "size": "Large",
+      "milk": "Whole Milk",
+      "defaults_applied": {
+        "size": true,
+        "milk": true
+      },
+      "confidence": 0.85,
+      "clarification_needed": false,
+      "clarification_reason": ""
+    },
+    {
+      "name": "Noah",
+      "raw_order_text": "matcha maybe?",
+      "quantity": 1,
+      "drink": "Matcha Latte",
+      "size": "Large",
+      "milk": "Whole Milk",
+      "defaults_applied": {
+        "size": true,
+        "milk": true
+      },
+      "confidence": 0.85,
+      "clarification_needed": false,
+      "clarification_reason": ""
+    },
+    {
+      "name": "Chloe",
+      "raw_order_text": "",
+      "quantity": 1,
+      "drink": "UNKNOWN",
+      "size": "Large",
+      "milk": "Whole Milk",
+      "defaults_applied": {
+        "size": true,
+        "milk": true
+      },
+      "confidence": 0,
+      "clarification_needed": true,
+      "clarification_reason": "blank_order"
+    },
+    {
+      "name": "Ethan",
+      "raw_order_text": "americano with milk",
+      "quantity": 1,
+      "drink": "Americano",
+      "size": "Large",
+      "milk": "Whole Milk",
+      "defaults_applied": {
+        "size": true,
+        "milk": true
+      },
+      "confidence": 0.85,
+      "clarification_needed": false,
+      "clarification_reason": ""
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+name,order_text,qty,default_rule,notes
+<person_name>,<free text order>,1,"If unclear -> Large + Whole Milk",<optional>

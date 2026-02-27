@@ -13,6 +13,7 @@ Reduce friction and ordering errors in team coffee runs.
 - Parse and normalize orders (drink/size/milk/temp/sugar/extras/food item).
 - Detect ambiguity and generate clarification list before checkout.
 - Select nearest allowed restaurant location.
+- First supported chain for MVP: Blank Street.
 - Build a structured cart draft (not auto-pay).
 - Human confirmation screen before final order placement.
 - Payment remains manual by Freddie using company Amex.
@@ -30,6 +31,7 @@ Reduce friction and ordering errors in team coffee runs.
    - clean order table
    - ambiguous entries requiring confirmation
    - missing items
+   - auto-default behavior when details are unclear: Large + Whole Milk
 5. After clarification, bot creates final order payload.
 6. Bot opens nearest branch website and pre-fills items (where feasible).
 7. Freddie reviews and clicks confirm/pay manually.

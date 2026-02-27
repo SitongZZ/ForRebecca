@@ -8,7 +8,7 @@
 - [ ] Add confidence scoring and clarification generator
 
 ## Week 2
-- [ ] Pick first chain and capture menu structure
+- [x] Pick first chain and capture menu structure (Blank Street)
 - [ ] Build menu matcher and item canonicalization
 - [ ] Generate final order draft format
 - [ ] Build simple review output (markdown/table or lightweight web page)

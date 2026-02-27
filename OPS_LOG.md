@@ -23,3 +23,5 @@ Live execution log
 2026-02-27 14:07:42 +00:00 | build_local_web_app | projects/coffee-bot/app/index.html | success
 2026-02-27 14:07:42 +00:00 | add_local_server | projects/coffee-bot/app/server.mjs | success
 2026-02-27 14:07:42 +00:00 | update_readme | projects/coffee-bot/README.md | success
+2026-02-27 14:10:30 +00:00 | add_start_script | start-coffee-bot.ps1 | success
+2026-02-27 14:10:30 +00:00 | add_start_script | start-coffee-bot.bat | success

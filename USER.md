@@ -14,6 +14,7 @@
   - Wants proactive/autonomous execution where safe
   - Prefers Live Mode: real-time step-by-step execution updates
   - Prefers persistent operation logging to OPS_LOG.md (English-only)
+  - Prefers proactive completion pings when major build steps are finished
 
 ## Context
 

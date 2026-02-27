@@ -34,3 +34,5 @@ Live execution log
 2026-02-27 14:22:34 +00:00 | add_typo_aliases | pistachio_latte_common_typos | success
 2026-02-27 14:26:00 +00:00 | integrate_fusejs | projects/coffee-bot/app/index.html | success
 2026-02-27 14:29:45 +00:00 | save_user_pref | proactive_completion_pings | success
+2026-02-27 14:48:56 +00:00 | add_gateway_start_script | start-rebecca-gateway.bat | success
+2026-02-27 14:48:56 +00:00 | add_gateway_start_script | start-rebecca-gateway.ps1 | success

@@ -39,3 +39,7 @@ Live execution log
 2026-02-27 15:00:59 +00:00 | upgrade_menu_v1_5 | projects/coffee-bot/data/blank_street_menu.json | success
 2026-02-27 15:00:59 +00:00 | add_threshold_logic | projects/coffee-bot/src/parser.mjs | success
 2026-02-27 15:00:59 +00:00 | add_checkout_assist | projects/coffee-bot/app/index.html | success
+2026-02-27 16:23:00 +00:00 | start_app_api_poc | projects/coffee-bot/research/app-extract | success
+2026-02-27 16:29:00 +00:00 | extract_menu_from_order_online_session | output/order_online_menu_extract.tsv | success
+2026-02-27 16:30:00 +00:00 | normalize_menu_to_coffeebot | output/blankstreet_menu_poc.json | success
+2026-02-27 16:31:00 +00:00 | write_poc_report | research/app-extract/POC_REPORT.md | success

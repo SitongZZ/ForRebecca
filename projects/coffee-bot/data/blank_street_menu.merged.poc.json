@@ -1,0 +1,479 @@
+{
+  "chain": "Blank Street",
+  "version": "v1.5",
+  "defaults": {
+    "size": "Large",
+    "milk": "Whole Milk"
+  },
+  "fuzzyThresholds": {
+    "autoAccept": 0.82,
+    "needsConfirm": 0.68
+  },
+  "items": [
+    {
+      "canonical": "Americano",
+      "aliases": [
+        "americano",
+        "long black"
+      ]
+    },
+    {
+      "canonical": "Blondie Latte",
+      "aliases": [
+        "blondie latte",
+        "blondie late"
+      ]
+    },
+    {
+      "canonical": "Blondie Matcha",
+      "aliases": [
+        "blondie matcha"
+      ]
+    },
+    {
+      "canonical": "Blueberry Matcha",
+      "aliases": [
+        "blueberry matcha"
+      ]
+    },
+    {
+      "canonical": "Cappuccino",
+      "aliases": [
+        "cappuccino",
+        "cap"
+      ]
+    },
+    {
+      "canonical": "Caramel Latte",
+      "aliases": [
+        "caramel latte"
+      ]
+    },
+    {
+      "canonical": "Chai Latte",
+      "aliases": [
+        "chai latte",
+        "chai"
+      ]
+    },
+    {
+      "canonical": "Chamomile Tea",
+      "aliases": [
+        "chamomile tea",
+        "camomile tea"
+      ]
+    },
+    {
+      "canonical": "Classic Iced Tea",
+      "aliases": [
+        "classic iced tea"
+      ]
+    },
+    {
+      "canonical": "Cold Brew",
+      "aliases": [
+        "cold brew"
+      ]
+    },
+    {
+      "canonical": "Cold Brew Latte",
+      "aliases": [
+        "cold brew latte",
+        "cold brew late"
+      ]
+    },
+    {
+      "canonical": "Cortado",
+      "aliases": [
+        "cortado"
+      ]
+    },
+    {
+      "canonical": "Daydream Latte",
+      "aliases": [
+        "daydream latte",
+        "daydream late"
+      ]
+    },
+    {
+      "canonical": "Daydream Matcha",
+      "aliases": [
+        "daydream matcha"
+      ]
+    },
+    {
+      "canonical": "Double Espresso",
+      "aliases": [
+        "double espresso",
+        "doppio"
+      ]
+    },
+    {
+      "canonical": "Earl Grey Matcha",
+      "aliases": [
+        "earl grey matcha"
+      ]
+    },
+    {
+      "canonical": "Earl Grey Tea",
+      "aliases": [
+        "earl grey",
+        "earl grey tea"
+      ]
+    },
+    {
+      "canonical": "English Breakfast Tea",
+      "aliases": [
+        "english breakfast",
+        "english breakfast tea"
+      ]
+    },
+    {
+      "canonical": "Espresso",
+      "aliases": [
+        "espresso",
+        "single espresso"
+      ]
+    },
+    {
+      "canonical": "Flat White",
+      "aliases": [
+        "flat white"
+      ]
+    },
+    {
+      "canonical": "Flavored Milks",
+      "aliases": [
+        "flavored milks"
+      ]
+    },
+    {
+      "canonical": "Grapefruit Sparkling Water - Spindrift (vg)",
+      "aliases": [
+        "grapefruit sparkling water - spindrift (vg)"
+      ]
+    },
+    {
+      "canonical": "Green Tea",
+      "aliases": [
+        "green tea"
+      ]
+    },
+    {
+      "canonical": "Hazelnut Latte",
+      "aliases": [
+        "hazelnut latte"
+      ]
+    },
+    {
+      "canonical": "Hot Brew",
+      "aliases": [
+        "hot brew"
+      ]
+    },
+    {
+      "canonical": "Hot Chocolate",
+      "aliases": [
+        "hot chocolate",
+        "hot choc"
+      ]
+    },
+    {
+      "canonical": "Iced Americano",
+      "aliases": [
+        "iced americano",
+        "ice americano"
+      ]
+    },
+    {
+      "canonical": "Iced Blondie Latte",
+      "aliases": [
+        "iced blondie latte",
+        "iced blondie late",
+        "ice blondie latte"
+      ]
+    },
+    {
+      "canonical": "Iced Blondie Matcha",
+      "aliases": [
+        "iced blondie matcha",
+        "ice blondie matcha"
+      ]
+    },
+    {
+      "canonical": "Iced Blueberry Matcha",
+      "aliases": [
+        "iced blueberry matcha",
+        "ice blueberry matcha"
+      ]
+    },
+    {
+      "canonical": "Iced Chocolate",
+      "aliases": [
+        "iced chocolate",
+        "ice chocolate"
+      ]
+    },
+    {
+      "canonical": "Iced Cortado",
+      "aliases": [
+        "iced cortado",
+        "ice cortado"
+      ]
+    },
+    {
+      "canonical": "Iced Daydream Latte",
+      "aliases": [
+        "iced daydream latte",
+        "iced daydream late",
+        "ice daydream latte"
+      ]
+    },
+    {
+      "canonical": "Iced Daydream Matcha",
+      "aliases": [
+        "iced daydream matcha",
+        "ice daydream matcha"
+      ]
+    },
+    {
+      "canonical": "Iced Earl Grey Matcha",
+      "aliases": [
+        "iced earl grey matcha",
+        "ice earl grey matcha"
+      ]
+    },
+    {
+      "canonical": "Iced Flavored Milks",
+      "aliases": [
+        "iced flavored milks",
+        "ice flavored milks"
+      ]
+    },
+    {
+      "canonical": "Iced Latte",
+      "aliases": [
+        "iced latte",
+        "ice latte",
+        "iced late"
+      ]
+    },
+    {
+      "canonical": "Iced Matcha Latte",
+      "aliases": [
+        "iced matcha",
+        "iced matcha latte",
+        "ice matcha",
+        "iced matcha late",
+        "ice matcha latte"
+      ]
+    },
+    {
+      "canonical": "Iced Matcha Tea",
+      "aliases": [
+        "iced matcha tea",
+        "ice matcha tea"
+      ]
+    },
+    {
+      "canonical": "Iced Mocha",
+      "aliases": [
+        "iced mocha",
+        "ice mocha"
+      ]
+    },
+    {
+      "canonical": "Iced Pistachio Latte",
+      "aliases": [
+        "iced pistachio latte",
+        "iced pistachio late",
+        "ice pistachio latte"
+      ]
+    },
+    {
+      "canonical": "Iced Strawberries & Cream Latte",
+      "aliases": [
+        "iced strawberries & cream latte",
+        "iced strawberries and cream latte",
+        "iced strawberries & cream late",
+        "ice strawberries & cream latte"
+      ]
+    },
+    {
+      "canonical": "Iced Strawberry Shortcake Matcha",
+      "aliases": [
+        "iced strawberry shortcake matcha",
+        "ice strawberry shortcake matcha"
+      ]
+    },
+    {
+      "canonical": "Iced Tea",
+      "aliases": [
+        "iced tea",
+        "ice tea"
+      ]
+    },
+    {
+      "canonical": "Latte",
+      "aliases": [
+        "latte",
+        "caffe latte",
+        "late"
+      ]
+    },
+    {
+      "canonical": "Lemon Limeade Sparkling Water - Spindrift (vg)",
+      "aliases": [
+        "lemon limeade sparkling water - spindrift (vg)"
+      ]
+    },
+    {
+      "canonical": "Lemonade",
+      "aliases": [
+        "lemonade"
+      ]
+    },
+    {
+      "canonical": "Macchiato",
+      "aliases": [
+        "macchiato",
+        "espresso macchiato"
+      ]
+    },
+    {
+      "canonical": "Matcha Latte",
+      "aliases": [
+        "matcha",
+        "matcha latte",
+        "matcha late"
+      ]
+    },
+    {
+      "canonical": "Matcha Tea",
+      "aliases": [
+        "matcha tea"
+      ]
+    },
+    {
+      "canonical": "Mocha",
+      "aliases": [
+        "mocha"
+      ]
+    },
+    {
+      "canonical": "Mocha Cold Brew Latte",
+      "aliases": [
+        "mocha cold brew latte",
+        "mocha cold brew late"
+      ]
+    },
+    {
+      "canonical": "Natalie's Orange Juice",
+      "aliases": [
+        "natalie's orange juice"
+      ]
+    },
+    {
+      "canonical": "Orange Juice",
+      "aliases": [
+        "orange juice",
+        "oj"
+      ]
+    },
+    {
+      "canonical": "Original Cold Brew",
+      "aliases": [
+        "original cold brew"
+      ]
+    },
+    {
+      "canonical": "Peppermint Tea",
+      "aliases": [
+        "peppermint tea",
+        "mint tea"
+      ]
+    },
+    {
+      "canonical": "Pistachio Latte",
+      "aliases": [
+        "pistachio latte",
+        "pastichio latte",
+        "pestichio latte",
+        "pistachio late",
+        "pastichio late",
+        "pestichio late",
+        "pistachio",
+        "pista latte"
+      ]
+    },
+    {
+      "canonical": "Sparkling Water",
+      "aliases": [
+        "sparkling water"
+      ]
+    },
+    {
+      "canonical": "Still Saratoga Water",
+      "aliases": [
+        "still saratoga water"
+      ]
+    },
+    {
+      "canonical": "Still Water",
+      "aliases": [
+        "still water",
+        "water"
+      ]
+    },
+    {
+      "canonical": "Strawberries & Cream Latte",
+      "aliases": [
+        "strawberries & cream latte",
+        "strawberries and cream latte",
+        "strawberries & cream late"
+      ]
+    },
+    {
+      "canonical": "Strawberry Shortcake Matcha",
+      "aliases": [
+        "strawberry shortcake matcha"
+      ]
+    },
+    {
+      "canonical": "Vanilla Latte",
+      "aliases": [
+        "vanilla latte"
+      ]
+    }
+  ],
+  "milks": [
+    "Whole Milk",
+    "Oat Milk",
+    "Almond Milk",
+    "Soy Milk",
+    "Skimmed Milk",
+    "Semi-Skimmed Milk",
+    "Coconut Milk"
+  ],
+  "sizes": [
+    "Small",
+    "Medium",
+    "Large"
+  ],
+  "modifiers": {
+    "temperature": [
+      "Hot",
+      "Iced"
+    ],
+    "extraShot": [
+      "No",
+      "Yes"
+    ],
+    "sweetness": [
+      "No Sugar",
+      "Less Sugar",
+      "Regular Sugar"
+    ]
+  },
+  "sourceMergeNote": "merged with app/api PoC extract"
+}

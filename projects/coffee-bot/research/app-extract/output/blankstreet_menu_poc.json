@@ -1,0 +1,465 @@
+{
+  "chain": "Blank Street",
+  "source": {
+    "kind": "order.online apollo cache (browser session)",
+    "extractedAt": "2026-02-27T16:27:49.840Z",
+    "notes": "Read-only extraction from storefront data loaded in browser session; no purchase actions performed."
+  },
+  "defaults": {
+    "size": "Large",
+    "milk": "Whole Milk"
+  },
+  "fuzzyThresholds": {
+    "autoAccept": 0.82,
+    "needsConfirm": 0.68
+  },
+  "items": [
+    {
+      "canonical": "Iced Daydream Latte",
+      "aliases": [
+        "iced daydream latte",
+        "iced daydream late",
+        "ice daydream latte"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$7.15"
+    },
+    {
+      "canonical": "Iced Strawberry Shortcake Matcha",
+      "aliases": [
+        "iced strawberry shortcake matcha",
+        "ice strawberry shortcake matcha"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$7.85"
+    },
+    {
+      "canonical": "Iced Blondie Latte",
+      "aliases": [
+        "iced blondie latte",
+        "iced blondie late",
+        "ice blondie latte"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$7.45"
+    },
+    {
+      "canonical": "Iced Latte",
+      "aliases": [
+        "iced latte",
+        "iced late",
+        "ice latte"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$6.15"
+    },
+    {
+      "canonical": "Iced Blondie Matcha",
+      "aliases": [
+        "iced blondie matcha",
+        "ice blondie matcha"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$8.15"
+    },
+    {
+      "canonical": "Iced Matcha Latte",
+      "aliases": [
+        "iced matcha latte",
+        "iced matcha late",
+        "ice matcha latte"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$6.85"
+    },
+    {
+      "canonical": "Iced Strawberries & Cream Latte",
+      "aliases": [
+        "iced strawberries & cream latte",
+        "iced strawberries and cream latte",
+        "iced strawberries & cream late",
+        "ice strawberries & cream latte"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$7.15"
+    },
+    {
+      "canonical": "Iced Daydream Matcha",
+      "aliases": [
+        "iced daydream matcha",
+        "ice daydream matcha"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$7.85"
+    },
+    {
+      "canonical": "Iced Blueberry Matcha",
+      "aliases": [
+        "iced blueberry matcha",
+        "ice blueberry matcha"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$7.85"
+    },
+    {
+      "canonical": "Original Cold Brew",
+      "aliases": [
+        "original cold brew"
+      ],
+      "sourceCategory": "Most Ordered",
+      "sourcePrice": "$5.75"
+    },
+    {
+      "canonical": "Iced Americano",
+      "aliases": [
+        "iced americano",
+        "ice americano"
+      ],
+      "sourceCategory": "Cold Espresso Drinks",
+      "sourcePrice": "$4.85"
+    },
+    {
+      "canonical": "Iced Cortado",
+      "aliases": [
+        "iced cortado",
+        "ice cortado"
+      ],
+      "sourceCategory": "Cold Espresso Drinks",
+      "sourcePrice": "$5.65"
+    },
+    {
+      "canonical": "Iced Mocha",
+      "aliases": [
+        "iced mocha",
+        "ice mocha"
+      ],
+      "sourceCategory": "Cold Espresso Drinks",
+      "sourcePrice": "$6.85"
+    },
+    {
+      "canonical": "Iced Pistachio Latte",
+      "aliases": [
+        "iced pistachio latte",
+        "iced pistachio late",
+        "ice pistachio latte"
+      ],
+      "sourceCategory": "Cold Espresso Drinks",
+      "sourcePrice": "$7.15"
+    },
+    {
+      "canonical": "Iced Chocolate",
+      "aliases": [
+        "iced chocolate",
+        "ice chocolate"
+      ],
+      "sourceCategory": "Cold Non-Espresso",
+      "sourcePrice": "$5.65"
+    },
+    {
+      "canonical": "Iced Earl Grey Matcha",
+      "aliases": [
+        "iced earl grey matcha",
+        "ice earl grey matcha"
+      ],
+      "sourceCategory": "Cold Non-Espresso",
+      "sourcePrice": "$8.15"
+    },
+    {
+      "canonical": "Iced Flavored Milks",
+      "aliases": [
+        "iced flavored milks",
+        "ice flavored milks"
+      ],
+      "sourceCategory": "Cold Non-Espresso",
+      "sourcePrice": "$5.65"
+    },
+    {
+      "canonical": "Iced Matcha Tea",
+      "aliases": [
+        "iced matcha tea",
+        "ice matcha tea"
+      ],
+      "sourceCategory": "Cold Non-Espresso",
+      "sourcePrice": "$5.95"
+    },
+    {
+      "canonical": "Cold Brew Latte",
+      "aliases": [
+        "cold brew latte",
+        "cold brew late"
+      ],
+      "sourceCategory": "Cold Quick Serve",
+      "sourcePrice": "$7.05"
+    },
+    {
+      "canonical": "Mocha Cold Brew Latte",
+      "aliases": [
+        "mocha cold brew latte",
+        "mocha cold brew late"
+      ],
+      "sourceCategory": "Cold Quick Serve",
+      "sourcePrice": "$7.45"
+    },
+    {
+      "canonical": "Classic Iced Tea",
+      "aliases": [
+        "classic iced tea"
+      ],
+      "sourceCategory": "Cold Teas & Drinks",
+      "sourcePrice": "$4.25"
+    },
+    {
+      "canonical": "Grapefruit Sparkling Water - Spindrift (vg)",
+      "aliases": [
+        "grapefruit sparkling water - spindrift (vg)"
+      ],
+      "sourceCategory": "Grab N' Go Drinks",
+      "sourcePrice": "$3.15"
+    },
+    {
+      "canonical": "Lemon Limeade Sparkling Water - Spindrift (vg)",
+      "aliases": [
+        "lemon limeade sparkling water - spindrift (vg)"
+      ],
+      "sourceCategory": "Grab N' Go Drinks",
+      "sourcePrice": "$3.15"
+    },
+    {
+      "canonical": "Natalie's Orange Juice",
+      "aliases": [
+        "natalie's orange juice"
+      ],
+      "sourceCategory": "Grab N' Go Drinks",
+      "sourcePrice": "$6.25"
+    },
+    {
+      "canonical": "Still Saratoga Water",
+      "aliases": [
+        "still saratoga water"
+      ],
+      "sourceCategory": "Grab N' Go Drinks",
+      "sourcePrice": "$3.75"
+    },
+    {
+      "canonical": "Americano",
+      "aliases": [
+        "americano"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$4.25"
+    },
+    {
+      "canonical": "Blondie Latte",
+      "aliases": [
+        "blondie latte",
+        "blondie late"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$6.85"
+    },
+    {
+      "canonical": "Cappuccino",
+      "aliases": [
+        "cappuccino"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$5.45"
+    },
+    {
+      "canonical": "Cortado",
+      "aliases": [
+        "cortado"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$4.95"
+    },
+    {
+      "canonical": "Daydream Latte",
+      "aliases": [
+        "daydream latte",
+        "daydream late"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$6.45"
+    },
+    {
+      "canonical": "Double Espresso",
+      "aliases": [
+        "double espresso"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$3.75"
+    },
+    {
+      "canonical": "Flat White",
+      "aliases": [
+        "flat white"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$5.45"
+    },
+    {
+      "canonical": "Latte",
+      "aliases": [
+        "latte",
+        "late"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$5.45"
+    },
+    {
+      "canonical": "Macchiato",
+      "aliases": [
+        "macchiato"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$4.75"
+    },
+    {
+      "canonical": "Mocha",
+      "aliases": [
+        "mocha"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$6.25"
+    },
+    {
+      "canonical": "Pistachio Latte",
+      "aliases": [
+        "pistachio latte",
+        "pistachio late"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$6.45"
+    },
+    {
+      "canonical": "Strawberries & Cream Latte",
+      "aliases": [
+        "strawberries & cream latte",
+        "strawberries and cream latte",
+        "strawberries & cream late"
+      ],
+      "sourceCategory": "Hot Espresso Drinks",
+      "sourcePrice": "$6.45"
+    },
+    {
+      "canonical": "Blondie Matcha",
+      "aliases": [
+        "blondie matcha"
+      ],
+      "sourceCategory": "Hot Non-Espresso",
+      "sourcePrice": "$7.45"
+    },
+    {
+      "canonical": "Blueberry Matcha",
+      "aliases": [
+        "blueberry matcha"
+      ],
+      "sourceCategory": "Hot Non-Espresso",
+      "sourcePrice": "$7.25"
+    },
+    {
+      "canonical": "Daydream Matcha",
+      "aliases": [
+        "daydream matcha"
+      ],
+      "sourceCategory": "Hot Non-Espresso",
+      "sourcePrice": "$7.25"
+    },
+    {
+      "canonical": "Earl Grey Matcha",
+      "aliases": [
+        "earl grey matcha"
+      ],
+      "sourceCategory": "Hot Non-Espresso",
+      "sourcePrice": "$7.45"
+    },
+    {
+      "canonical": "Flavored Milks",
+      "aliases": [
+        "flavored milks"
+      ],
+      "sourceCategory": "Hot Non-Espresso",
+      "sourcePrice": "$4.95"
+    },
+    {
+      "canonical": "Hot Chocolate",
+      "aliases": [
+        "hot chocolate"
+      ],
+      "sourceCategory": "Hot Non-Espresso",
+      "sourcePrice": "$4.95"
+    },
+    {
+      "canonical": "Matcha Latte",
+      "aliases": [
+        "matcha latte",
+        "matcha late"
+      ],
+      "sourceCategory": "Hot Non-Espresso",
+      "sourcePrice": "$6.25"
+    },
+    {
+      "canonical": "Strawberry Shortcake Matcha",
+      "aliases": [
+        "strawberry shortcake matcha"
+      ],
+      "sourceCategory": "Hot Non-Espresso",
+      "sourcePrice": "$7.25"
+    },
+    {
+      "canonical": "Hot Brew",
+      "aliases": [
+        "hot brew"
+      ],
+      "sourceCategory": "Hot Quick Serve",
+      "sourcePrice": "$3.55"
+    },
+    {
+      "canonical": "Chamomile Tea",
+      "aliases": [
+        "chamomile tea"
+      ],
+      "sourceCategory": "Hot Teas & Drinks",
+      "sourcePrice": "$3.75"
+    },
+    {
+      "canonical": "Earl Grey Tea",
+      "aliases": [
+        "earl grey tea"
+      ],
+      "sourceCategory": "Hot Teas & Drinks",
+      "sourcePrice": "$3.75"
+    },
+    {
+      "canonical": "English Breakfast Tea",
+      "aliases": [
+        "english breakfast tea"
+      ],
+      "sourceCategory": "Hot Teas & Drinks",
+      "sourcePrice": "$3.75"
+    },
+    {
+      "canonical": "Matcha Tea",
+      "aliases": [
+        "matcha tea"
+      ],
+      "sourceCategory": "Hot Teas & Drinks",
+      "sourcePrice": "$5.35"
+    }
+  ],
+  "milks": [
+    "Whole Milk",
+    "Oat Milk",
+    "Almond Milk",
+    "Soy Milk",
+    "Skimmed Milk",
+    "Semi-Skimmed Milk",
+    "Coconut Milk"
+  ],
+  "sizes": [
+    "Small",
+    "Medium",
+    "Large"
+  ]
+}

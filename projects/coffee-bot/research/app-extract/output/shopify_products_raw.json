@@ -1,0 +1,449 @@
+[
+  {
+    "id": "gid://shopify/Product/9496577933625",
+    "title": "Badges",
+    "handle": "badges",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Title",
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/49503653298489",
+            "title": "Default Title",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/14866969690486",
+    "title": "Boxer Shorts",
+    "handle": "boxer-shorts",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          "LARGE - W32\"",
+          "X LARGE - W34\"",
+          "2X LARGE - W36\""
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/54853025759606",
+            "title": "LARGE - W32\"",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "LARGE - W32\""
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/54853025792374",
+            "title": "X LARGE - W34\"",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "X LARGE - W34\""
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/54853025825142",
+            "title": "2X LARGE - W36\"",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "2X LARGE - W36\""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/9496582750521",
+    "title": "Cup",
+    "handle": "cup",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Title",
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/49503664013625",
+            "title": "Default Title",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/15502184153462",
+    "title": "Darker Roast",
+    "handle": "darker-roast",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Title",
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/56890416562550",
+            "title": "Default Title",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/15502186152310",
+    "title": "Decaf",
+    "handle": "decaf",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Title",
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/56890429899126",
+            "title": "Default Title",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/9496575967545",
+    "title": "Diner Tee",
+    "handle": "diner-tee",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          "Small",
+          "Medium"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/49692201255225",
+            "title": "Small",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "Small"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/49692201287993",
+            "title": "Medium",
+            "availableForSale": false,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "Medium"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/15502182515062",
+    "title": "Lighter Roast",
+    "handle": "lighter-roast",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Title",
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/56890410959222",
+            "title": "Default Title",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/14808204968310",
+    "title": "Matcha Tin",
+    "handle": "matcha-tin",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Title",
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/53593364988278",
+            "title": "Default Title",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/9496571052345",
+    "title": "Printed Tote Bag",
+    "handle": "tote",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Title",
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/49503636193593",
+            "title": "Default Title",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/15607896768886",
+    "title": "The Sleeve",
+    "handle": "winter-cup-sleeve",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Title",
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/57265405821302",
+            "title": "Default Title",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/9492037599545",
+    "title": "Worldwide Tee",
+    "handle": "tee-1",
+    "productType": "",
+    "tags": [],
+    "availableForSale": true,
+    "options": [
+      {
+        "name": "Size",
+        "values": [
+          "Small",
+          "Medium",
+          "Large",
+          "2XL"
+        ]
+      }
+    ],
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/49692202697017",
+            "title": "Small",
+            "availableForSale": false,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "Small"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/49692202729785",
+            "title": "Medium",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "Medium"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/49692202762553",
+            "title": "Large",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "Large"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/54844432679286",
+            "title": "2XL",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "2XL"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

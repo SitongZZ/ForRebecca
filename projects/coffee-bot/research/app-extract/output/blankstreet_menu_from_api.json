@@ -1,0 +1,39 @@
+{
+  "chain": "Blank Street",
+  "source": {
+    "kind": "shopify_storefront_graphql",
+    "endpoint": "https://3e3a02.myshopify.com/api/2025-01/graphql",
+    "extractedAt": "2026-02-27T16:24:49.326Z",
+    "notes": "Read-only extraction from publicly exposed storefront API config in web/app bundle."
+  },
+  "defaults": {
+    "size": "Large",
+    "milk": "Whole Milk"
+  },
+  "fuzzyThresholds": {
+    "autoAccept": 0.82,
+    "needsConfirm": 0.68
+  },
+  "items": [
+    {
+      "canonical": "Matcha Tin",
+      "aliases": [
+        "matcha tin"
+      ]
+    }
+  ],
+  "milks": [
+    "Whole Milk",
+    "Oat Milk",
+    "Almond Milk",
+    "Soy Milk",
+    "Skimmed Milk",
+    "Semi-Skimmed Milk",
+    "Coconut Milk"
+  ],
+  "sizes": [
+    "Small",
+    "Medium",
+    "Large"
+  ]
+}

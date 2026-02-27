@@ -6,8 +6,8 @@ const MENU = JSON.parse(
   fs.readFileSync(path.resolve(process.cwd(), 'projects', 'coffee-bot', 'data', MENU_FILE), 'utf8')
 );
 
-const AUTO_ACCEPT_THRESHOLD = MENU.fuzzyThresholds?.autoAccept ?? 0.82;
-const NEEDS_CONFIRM_THRESHOLD = MENU.fuzzyThresholds?.needsConfirm ?? 0.68;
+const AUTO_ACCEPT_THRESHOLD = Number(process.env.COFFEE_AUTO_ACCEPT || MENU.fuzzyThresholds?.autoAccept || 0.82);
+const NEEDS_CONFIRM_THRESHOLD = Number(process.env.COFFEE_NEEDS_CONFIRM || MENU.fuzzyThresholds?.needsConfirm || 0.68);
 
 const MILK_KEYWORDS = new Map([
   ['whole', 'Whole Milk'], ['full fat', 'Whole Milk'], ['semi', 'Semi-Skimmed Milk'], ['skim', 'Skimmed Milk'],

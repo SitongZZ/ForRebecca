@@ -44,3 +44,5 @@ Live execution log
 2026-02-27 16:30:00 +00:00 | normalize_menu_to_coffeebot | output/blankstreet_menu_poc.json | success
 2026-02-27 16:31:00 +00:00 | write_poc_report | research/app-extract/POC_REPORT.md | success
 2026-02-27 19:22:00 +00:00 | set_default_menu_rollout | parser default -> blank_street_menu.merged.poc.json | success
+2026-02-27 20:50:00 +00:00 | run_full_metrics_pack | projects/coffee-bot/research/metrics-full.mjs | success
+2026-02-27 20:51:00 +00:00 | add_threshold_env_overrides | parser env COFFEE_AUTO_ACCEPT/COFFEE_NEEDS_CONFIRM | success

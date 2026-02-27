@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Bot - Blank Street MVP</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 1100px; }
+    h1 { margin-bottom: 6px; }
+    .muted { color: #666; margin-top: 0; }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+    button { padding: 8px 12px; cursor: pointer; }
+    table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+    th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; }
+    th { background: #f6f6f6; text-align: left; }
+    .warn { background: #fff5d6; }
+    .ok { color: #0a7d2e; font-weight: 600; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 14px; margin-top: 14px; }
+    code { background: #f2f2f2; padding: 2px 4px; }
+  </style>
+</head>
+<body>
+  <h1>Coffee Bot (Blank Street MVP)</h1>
+  <p class="muted">Upload Excel/CSV -> parse teammate orders -> review -> confirm -> generate final order page.</p>
+
+  <div class="card">
+    <strong>Default rule:</strong> If unclear, auto-apply <code>Large + Whole Milk</code>
+  </div>
+
+  <div class="row">
+    <input id="fileInput" type="file" accept=".xlsx,.xls,.csv" />
+    <button id="parseBtn">Parse Orders</button>
+    <button id="confirmBtn" disabled>Confirm & Generate Order Page</button>
+  </div>
+
+  <div id="status" class="muted"></div>
+  <div id="summary"></div>
+  <div id="reviewTable"></div>
+  <div id="finalPage"></div>
+
+  <script>
+    const DRINK_KEYWORDS = new Map([
+      ['latte', 'Latte'], ['flat white', 'Flat White'], ['americano', 'Americano'],
+      ['cappuccino', 'Cappuccino'], ['matcha', 'Matcha Latte'], ['mocha', 'Mocha'], ['espresso', 'Espresso']
+    ]);
+    const MILK_KEYWORDS = new Map([
+      ['whole', 'Whole Milk'], ['full fat', 'Whole Milk'], ['semi', 'Semi-Skimmed Milk'], ['skim', 'Skimmed Milk'],
+      ['oat', 'Oat Milk'], ['almond', 'Almond Milk'], ['soy', 'Soy Milk'], ['soya', 'Soy Milk'], ['coconut', 'Coconut Milk']
+    ]);
+    const SIZE_KEYWORDS = new Map([
+      ['small', 'Small'], ['medium', 'Medium'], ['regular', 'Medium'], ['large', 'Large']
+    ]);
+
+    const DEFAULT_SIZE = 'Large';
+    const DEFAULT_MILK = 'Whole Milk';
+
+    let parsedOrders = [];
+
+    const norm = (s = '') => s.trim().toLowerCase().replace(/\s+/g, ' ');
+
+    function detectDrink(text) {
+      const hits = [];
+      for (const [k, v] of DRINK_KEYWORDS.entries()) if (text.includes(k)) hits.push(v);
+      const uniq = [...new Set(hits)];
+      if (!uniq.length) return { drink: 'UNKNOWN', conf: 0.2, clarification: true, reason: 'no_drink_detected' };
+      if (uniq.length > 1) return { drink: uniq.join('/'), conf: 0.35, clarification: true, reason: 'multiple_drink_candidates' };
+      return { drink: uniq[0], conf: 0.85, clarification: false, reason: '' };
+    }
+
+    function detectMilk(text) {
+      for (const [k, v] of MILK_KEYWORDS.entries()) if (text.includes(k)) return { milk: v, defaulted: false };
+      return { milk: DEFAULT_MILK, defaulted: true };
+    }
+
+    function detectSize(text) {
+      for (const [k, v] of SIZE_KEYWORDS.entries()) if (text.includes(k)) return { size: v, defaulted: false };
+      return { size: DEFAULT_SIZE, defaulted: true };
+    }
+
+    function parseRow(row) {
+      const name = String(row.name || '').trim();
+      const raw = String(row.order_text || '').trim();
+      const qty = Number.parseInt(row.qty || '1', 10) || 1;
+      const text = norm(raw);
+
+      if (!text) {
+        return {
+          name, raw_order_text: raw, quantity: qty, drink: 'UNKNOWN', size: DEFAULT_SIZE, milk: DEFAULT_MILK,
+          confidence: 0, clarification_needed: true, clarification_reason: 'blank_order',
+          defaults_applied: { size: true, milk: true }
+        };
+      }
+
+      const d = detectDrink(text);
+      const s = detectSize(text);
+      const m = detectMilk(text);
+      const confidence = Math.min(0.99, Number((d.conf + (s.defaulted ? 0 : 0.07) + (m.defaulted ? 0 : 0.07)).toFixed(2)));
+
+      return {
+        name,
+        raw_order_text: raw,
+        quantity: qty,
+        drink: d.drink,
+        size: s.size,
+        milk: m.milk,
+        confidence,
+        clarification_needed: d.clarification,
+        clarification_reason: d.reason,
+        defaults_applied: { size: s.defaulted, milk: m.defaulted }
+      };
+    }
+
+    function parseCsv(text) {
+      const lines = text.split(/\r?\n/).filter(Boolean);
+      if (lines.length < 2) return [];
+      const headers = lines[0].split(',').map(h => h.trim());
+      return lines.slice(1).map(line => {
+        let inQ = false, cur = '', cols = [];
+        for (const ch of line) {
+          if (ch === '"') inQ = !inQ;
+          else if (ch === ',' && !inQ) { cols.push(cur); cur = ''; }
+          else cur += ch;
+        }
+        cols.push(cur);
+        const obj = {};
+        headers.forEach((h, i) => obj[h] = (cols[i] || '').trim());
+        return obj;
+      });
+    }
+
+    function toHtmlTable(rows) {
+      const head = ['Name', 'Raw Order', 'Parsed Drink', 'Size', 'Milk', 'Qty', 'Confidence', 'Needs Clarification'];
+      const tr = rows.map(r => {
+        const cls = r.clarification_needed ? 'warn' : '';
+        return `<tr class="${cls}"><td>${r.name}</td><td>${r.raw_order_text || '-'}</td><td>${r.drink}</td><td>${r.size}</td><td>${r.milk}</td><td>${r.quantity}</td><td>${r.confidence}</td><td>${r.clarification_needed ? ('YES (' + r.clarification_reason + ')') : 'No'}</td></tr>`;
+      }).join('');
+      return `<table><thead><tr>${head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${tr}</tbody></table>`;
+    }
+
+    function aggregateCart(rows) {
+      const map = new Map();
+      for (const r of rows) {
+        if (r.drink === 'UNKNOWN') continue;
+        const key = `${r.drink}|${r.size}|${r.milk}`;
+        map.set(key, (map.get(key) || 0) + r.quantity);
+      }
+      return [...map.entries()].map(([k, qty]) => {
+        const [drink, size, milk] = k.split('|');
+        return { drink, size, milk, quantity: qty };
+      });
+    }
+
+    function renderFinalPage(rows) {
+      const cart = aggregateCart(rows);
+      const needs = rows.filter(r => r.clarification_needed);
+      const itemsHtml = cart.length
+        ? `<ul>${cart.map(i => `<li><strong>${i.quantity}x</strong> ${i.size} ${i.drink} (${i.milk})</li>`).join('')}</ul>`
+        : '<p>No valid items yet.</p>';
+
+      const needsHtml = needs.length
+        ? `<ul>${needs.map(n => `<li>${n.name}: "${n.raw_order_text || '-'}" -> ${n.clarification_reason}</li>`).join('')}</ul>`
+        : '<p class="ok">No blocking clarifications.</p>';
+
+      return `
+        <div class="card">
+          <h3>Final Order Page (Draft for Manual Checkout)</h3>
+          <p><strong>Target chain:</strong> Blank Street (nearest branch to be selected manually in checkout step)</p>
+          <h4>Consolidated Cart</h4>
+          ${itemsHtml}
+          <h4>Clarifications to verify before payment</h4>
+          ${needsHtml}
+          <p><strong>Next action:</strong> Open Blank Street ordering page, add these items, then you manually verify and pay with Amex.</p>
+        </div>`;
+    }
+
+    async function readInputFile(file) {
+      const ext = file.name.toLowerCase().split('.').pop();
+      if (ext === 'csv') {
+        const text = await file.text();
+        return parseCsv(text);
+      }
+      const data = await file.arrayBuffer();
+      const workbook = XLSX.read(data, { type: 'array' });
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      return XLSX.utils.sheet_to_json(sheet, { defval: '' });
+    }
+
+    document.getElementById('parseBtn').addEventListener('click', async () => {
+      const f = document.getElementById('fileInput').files[0];
+      if (!f) {
+        alert('Please choose a .xlsx/.xls/.csv file first.');
+        return;
+      }
+
+      document.getElementById('status').textContent = 'Parsing...';
+      const rows = await readInputFile(f);
+      parsedOrders = rows.map(parseRow);
+
+      const clarificationCount = parsedOrders.filter(r => r.clarification_needed).length;
+      const defaultCount = parsedOrders.filter(r => r.defaults_applied.size || r.defaults_applied.milk).length;
+
+      document.getElementById('summary').innerHTML = `
+        <div class="card">
+          <strong>Summary:</strong> ${parsedOrders.length} orders | ${clarificationCount} need clarification | ${defaultCount} used defaults
+        </div>`;
+      document.getElementById('reviewTable').innerHTML = toHtmlTable(parsedOrders);
+      document.getElementById('finalPage').innerHTML = '';
+      document.getElementById('confirmBtn').disabled = false;
+      document.getElementById('status').textContent = 'Parsed successfully. Review table, then click Confirm.';
+    });
+
+    document.getElementById('confirmBtn').addEventListener('click', () => {
+      if (!parsedOrders.length) return;
+      document.getElementById('finalPage').innerHTML = renderFinalPage(parsedOrders);
+      document.getElementById('status').textContent = 'Final order draft generated.';
+    });
+  </script>
+</body>
+</html>

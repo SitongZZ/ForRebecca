@@ -8,19 +8,33 @@
   - Milk = Whole Milk
 - Flags high-risk ambiguity for manual confirmation
 
-## Run
+## Run parser (CLI)
 From workspace root:
 
 ```powershell
 node projects/coffee-bot/src/parser.mjs
 ```
 
+## Open local product page (Excel upload + confirm)
+
+```powershell
+node projects/coffee-bot/app/server.mjs
+```
+Then open: `http://localhost:4173`
+
+### Excel columns expected
+- `name`
+- `order_text`
+- `qty`
+
 ## Input sample
 `projects/coffee-bot/samples/blank_street_orders_sample.csv`
 
 ## Output
-`projects/coffee-bot/output/parsed_orders.json`
+- CLI parser output: `projects/coffee-bot/output/parsed_orders.json`
+- Product page output: rendered in browser (review table + final order draft)
 
 ## Notes
-- This is parser v0 (rule-based).
-- Next step: add Blank Street menu matcher + cart draft generator.
+- Parser is v0 (rule-based, auto-guess first).
+- Default rule when unclear: Large + Whole Milk.
+- Manual confirmation and manual payment remain required.

@@ -15,7 +15,7 @@ From workspace root:
 node projects/coffee-bot/src/parser.mjs
 ```
 
-## Open local product page (Excel upload + confirm)
+## Open local product page (Excel upload OR online form + confirm)
 
 ```powershell
 node projects/coffee-bot/app/server.mjs

@@ -15,6 +15,7 @@
   - Prefers Live Mode: real-time step-by-step execution updates
   - Prefers persistent operation logging to OPS_LOG.md (English-only)
   - Prefers proactive completion pings when major build steps are finished
+  - Asked assistant identity to be “Pablo” with witty vibe and 🫡 signature
 
 ## Context
 

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coffee Bot - Blank Street MVP</title>
   <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0"></script>
   <style>
     body { font-family: Arial, sans-serif; margin: 24px; max-width: 1100px; }
     .muted { color: #666; }
@@ -79,16 +80,40 @@ const SIZE_KEYWORDS = new Map([
 const DEFAULT_SIZE='Large'; const DEFAULT_MILK='Whole Milk';
 let parsed=[]; let manual=[];
 
+const DRINK_ALIAS_INDEX = MENU_ITEMS.flatMap(item => item.aliases.map(alias => ({ alias, canonical: item.canonical })));
+const drinkFuse = new Fuse(DRINK_ALIAS_INDEX, {
+  keys: ['alias'],
+  includeScore: true,
+  threshold: 0.32,
+  ignoreLocation: true,
+  minMatchCharLength: 3
+});
+
 const norm=s=>(s||'').trim().toLowerCase().replace(/\s+/g,' ');
 function detectDrink(t){
+  // 1) exact substring match first
   const matches=[];
   for (const item of MENU_ITEMS) {
     for (const alias of item.aliases) {
-      if (t.includes(alias)) matches.push({ canonical: item.canonical, alias });
+      if (t.includes(alias)) matches.push({ canonical: item.canonical, alias, mode: 'exact' });
     }
   }
 
-  if(!matches.length) return {drink:'UNKNOWN',conf:0.2,ask:true,reason:'no_drink_detected'};
+  // 2) fuzzy fallback (Fuse.js)
+  if(!matches.length){
+    const fuzzy = drinkFuse.search(t).slice(0, 3);
+    if(!fuzzy.length) return {drink:'UNKNOWN',conf:0.2,ask:true,reason:'no_drink_detected'};
+
+    const best = fuzzy[0];
+    const bestCanonical = best.item.canonical;
+    const bestScore = best.score ?? 1;
+    const conf = Number((1 - bestScore).toFixed(2));
+
+    if(conf < 0.72){
+      return {drink:bestCanonical,conf:Math.max(0.35, conf),ask:true,reason:'low_confidence_fuzzy_match'};
+    }
+    return {drink:bestCanonical,conf:Math.max(0.75, conf),ask:false,reason:''};
+  }
 
   matches.sort((a,b)=>b.alias.length-a.alias.length);
   const top=matches[0];
@@ -97,7 +122,7 @@ function detectDrink(t){
   if(topCanonicals.length>1){
     return {drink:topCanonicals.join('/'),conf:0.35,ask:true,reason:'multiple_drink_candidates'};
   }
-  return {drink:top.canonical,conf:0.92,ask:false,reason:''};
+  return {drink:top.canonical,conf:0.93,ask:false,reason:''};
 }
 function detectMilk(t){ for(const [k,v] of MILK_KEYWORDS) if(t.includes(k)) return {milk:v,def:false}; return {milk:DEFAULT_MILK,def:true}; }
 function detectSize(t){ for(const [k,v] of SIZE_KEYWORDS) if(t.includes(k)) return {size:v,def:false}; return {size:DEFAULT_SIZE,def:true}; }

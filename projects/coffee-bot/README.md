@@ -36,6 +36,7 @@ Then open: `http://localhost:4173`
 
 ## Notes
 - Parser is v1 (menu-aware for Blank Street aliases, auto-guess first).
+- Added Fuse.js fuzzy matching for typo-tolerant drink recognition.
 - Includes alias support for items like Pistachio Latte (including common typo variants).
 - Default rule when unclear: Large + Whole Milk.
 - Manual confirmation and manual payment remain required.

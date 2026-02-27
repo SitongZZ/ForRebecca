@@ -31,3 +31,4 @@ Live execution log
 2026-02-27 14:18:54 +00:00 | upgrade_parser_menu_aware | projects/coffee-bot/src/parser.mjs | success
 2026-02-27 14:18:54 +00:00 | upgrade_web_parser_menu_aware | projects/coffee-bot/app/index.html | success
 2026-02-27 14:19:30 +00:00 | fix_alias_priority | pistachio_latte_over_latte | success
+2026-02-27 14:22:34 +00:00 | add_typo_aliases | pistachio_latte_common_typos | success

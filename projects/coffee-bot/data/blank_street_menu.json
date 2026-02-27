@@ -1,0 +1,51 @@
+{
+  "chain": "Blank Street",
+  "defaults": {
+    "size": "Large",
+    "milk": "Whole Milk"
+  },
+  "items": [
+    {
+      "canonical": "Pistachio Latte",
+      "aliases": ["pistachio latte", "pastichio latte", "pistachio", "pista latte"],
+      "category": "drink"
+    },
+    {
+      "canonical": "Latte",
+      "aliases": ["latte", "caffe latte"],
+      "category": "drink"
+    },
+    {
+      "canonical": "Flat White",
+      "aliases": ["flat white"],
+      "category": "drink"
+    },
+    {
+      "canonical": "Americano",
+      "aliases": ["americano"],
+      "category": "drink"
+    },
+    {
+      "canonical": "Cappuccino",
+      "aliases": ["cappuccino", "cap"],
+      "category": "drink"
+    },
+    {
+      "canonical": "Matcha Latte",
+      "aliases": ["matcha", "matcha latte"],
+      "category": "drink"
+    },
+    {
+      "canonical": "Mocha",
+      "aliases": ["mocha"],
+      "category": "drink"
+    },
+    {
+      "canonical": "Espresso",
+      "aliases": ["espresso"],
+      "category": "drink"
+    }
+  ],
+  "milks": ["Whole Milk", "Oat Milk", "Almond Milk", "Soy Milk", "Skimmed Milk", "Semi-Skimmed Milk"],
+  "sizes": ["Small", "Medium", "Large"]
+}

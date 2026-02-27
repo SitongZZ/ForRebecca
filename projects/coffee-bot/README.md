@@ -35,6 +35,7 @@ Then open: `http://localhost:4173`
 - Product page output: rendered in browser (review table + final order draft)
 
 ## Notes
-- Parser is v0 (rule-based, auto-guess first).
+- Parser is v1 (menu-aware for Blank Street aliases, auto-guess first).
+- Includes alias support for items like Pistachio Latte (including common typo variants).
 - Default rule when unclear: Large + Whole Milk.
 - Manual confirmation and manual payment remain required.

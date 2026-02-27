@@ -8,16 +8,16 @@
   "orders": [
     {
       "name": "Alex",
-      "raw_order_text": "Iced latte oat",
+      "raw_order_text": "Iced pastichio latte oat",
       "quantity": 1,
-      "drink": "Latte",
+      "drink": "Pistachio Latte",
       "size": "Large",
       "milk": "Oat Milk",
       "defaults_applied": {
         "size": true,
         "milk": false
       },
-      "confidence": 0.92,
+      "confidence": 0.99,
       "clarification_needed": false,
       "clarification_reason": ""
     },
@@ -32,7 +32,7 @@
         "size": true,
         "milk": true
       },
-      "confidence": 0.85,
+      "confidence": 0.92,
       "clarification_needed": false,
       "clarification_reason": ""
     },
@@ -47,7 +47,7 @@
         "size": true,
         "milk": true
       },
-      "confidence": 0.85,
+      "confidence": 0.92,
       "clarification_needed": false,
       "clarification_reason": ""
     },
@@ -77,7 +77,7 @@
         "size": true,
         "milk": true
       },
-      "confidence": 0.85,
+      "confidence": 0.92,
       "clarification_needed": false,
       "clarification_reason": ""
     }

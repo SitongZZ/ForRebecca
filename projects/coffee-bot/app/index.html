@@ -60,10 +60,16 @@
   <div id="final"></div>
 
 <script>
-const DRINK_KEYWORDS = new Map([
-  ['latte','Latte'], ['flat white','Flat White'], ['americano','Americano'],
-  ['cappuccino','Cappuccino'], ['matcha','Matcha Latte'], ['mocha','Mocha'], ['espresso','Espresso']
-]);
+const MENU_ITEMS = [
+  { canonical: 'Pistachio Latte', aliases: ['pistachio latte', 'pastichio latte', 'pistachio', 'pista latte'] },
+  { canonical: 'Latte', aliases: ['latte', 'caffe latte'] },
+  { canonical: 'Flat White', aliases: ['flat white'] },
+  { canonical: 'Americano', aliases: ['americano'] },
+  { canonical: 'Cappuccino', aliases: ['cappuccino', 'cap'] },
+  { canonical: 'Matcha Latte', aliases: ['matcha', 'matcha latte'] },
+  { canonical: 'Mocha', aliases: ['mocha'] },
+  { canonical: 'Espresso', aliases: ['espresso'] }
+];
 const MILK_KEYWORDS = new Map([
   ['whole','Whole Milk'], ['oat','Oat Milk'], ['almond','Almond Milk'], ['soy','Soy Milk'], ['soya','Soy Milk']
 ]);
@@ -75,11 +81,23 @@ let parsed=[]; let manual=[];
 
 const norm=s=>(s||'').trim().toLowerCase().replace(/\s+/g,' ');
 function detectDrink(t){
-  const hits=[]; for(const [k,v] of DRINK_KEYWORDS) if(t.includes(k)) hits.push(v);
-  const uniq=[...new Set(hits)];
-  if(!uniq.length) return {drink:'UNKNOWN',conf:0.2,ask:true,reason:'no_drink_detected'};
-  if(uniq.length>1) return {drink:uniq.join('/'),conf:0.35,ask:true,reason:'multiple_drink_candidates'};
-  return {drink:uniq[0],conf:0.85,ask:false,reason:''};
+  const matches=[];
+  for (const item of MENU_ITEMS) {
+    for (const alias of item.aliases) {
+      if (t.includes(alias)) matches.push({ canonical: item.canonical, alias });
+    }
+  }
+
+  if(!matches.length) return {drink:'UNKNOWN',conf:0.2,ask:true,reason:'no_drink_detected'};
+
+  matches.sort((a,b)=>b.alias.length-a.alias.length);
+  const top=matches[0];
+  const topCanonicals=[...new Set(matches.filter(m=>m.alias.length===top.alias.length).map(m=>m.canonical))];
+
+  if(topCanonicals.length>1){
+    return {drink:topCanonicals.join('/'),conf:0.35,ask:true,reason:'multiple_drink_candidates'};
+  }
+  return {drink:top.canonical,conf:0.92,ask:false,reason:''};
 }
 function detectMilk(t){ for(const [k,v] of MILK_KEYWORDS) if(t.includes(k)) return {milk:v,def:false}; return {milk:DEFAULT_MILK,def:true}; }
 function detectSize(t){ for(const [k,v] of SIZE_KEYWORDS) if(t.includes(k)) return {size:v,def:false}; return {size:DEFAULT_SIZE,def:true}; }

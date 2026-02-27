@@ -1,15 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const DRINK_KEYWORDS = new Map([
-  ['latte', 'Latte'],
-  ['flat white', 'Flat White'],
-  ['americano', 'Americano'],
-  ['cappuccino', 'Cappuccino'],
-  ['matcha', 'Matcha Latte'],
-  ['mocha', 'Mocha'],
-  ['espresso', 'Espresso'],
-]);
+const MENU = JSON.parse(
+  fs.readFileSync(path.resolve(process.cwd(), 'projects', 'coffee-bot', 'data', 'blank_street_menu.json'), 'utf8')
+);
 
 const MILK_KEYWORDS = new Map([
   ['whole', 'Whole Milk'],
@@ -72,14 +66,27 @@ function parseCsv(content) {
 }
 
 function detectDrink(text) {
-  const hits = [];
-  for (const [k, v] of DRINK_KEYWORDS.entries()) {
-    if (text.includes(k)) hits.push(v);
+  const matches = [];
+  for (const item of MENU.items) {
+    for (const alias of item.aliases) {
+      if (text.includes(alias)) {
+        matches.push({ canonical: item.canonical, alias });
+      }
+    }
   }
-  const uniq = [...new Set(hits)];
-  if (uniq.length === 0) return { drink: null, conf: 0.0 };
-  if (uniq.length > 1) return { drink: uniq.sort().join('/'), conf: 0.35 };
-  return { drink: uniq[0], conf: 0.85 };
+
+  if (matches.length === 0) return { drink: null, conf: 0.0 };
+
+  // Prefer the most specific alias (longest phrase), e.g. "pistachio latte" over "latte"
+  matches.sort((a, b) => b.alias.length - a.alias.length);
+  const top = matches[0];
+
+  const distinctTopCanonicals = [...new Set(matches.filter(m => m.alias.length === top.alias.length).map(m => m.canonical))];
+  if (distinctTopCanonicals.length > 1) {
+    return { drink: distinctTopCanonicals.sort().join('/'), conf: 0.35 };
+  }
+
+  return { drink: top.canonical, conf: 0.92 };
 }
 
 function detectMilk(text) {
